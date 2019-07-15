@@ -1,0 +1,47 @@
+{
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/*.css",
+          "/*.js",
+          "/*.woff",
+          "/*.woff2",
+          "/*.eot",
+          "/*.ttf",
+          "/*.svg",
+          "/*.png"
+        ]
+      }
+    },
+    {
+      "name": "assets",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/*",
+          "/assets/i18n/*",
+          "/assets/images/**"
+        ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "Gateway",
+      "urls": ["/gw/**"],
+      "cacheConfig": {
+        "maxSize": 0,
+        "maxAge": "0u",
+        "strategy": "freshness",
+        "timeout": "10s"
+      }
+    }
+  ]
+}

@@ -16,16 +16,6 @@ import {ApolloLink} from 'apollo-link';
 
 
 
-// await before instantiating ApolloClient, else queries might run before the cache is persisted
-// await persistCache({
-//   cache,
-//   storage: window.localStorage,
-// });
-
-
-
-
-
 @NgModule({
   exports: [HttpClientModule, ApolloModule, HttpLinkModule],
   declarations: [],

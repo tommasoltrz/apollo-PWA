@@ -13,6 +13,8 @@ import { ProjectComponent } from './pages/projects/project/project.component';
 import { UsersComponent } from './pages/users/users.component';
 import { UserComponent } from './pages/users/user/user.component';
 import { AddUserComponent } from './pages/users/add-user/add-user.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { AddUserComponent } from './pages/users/add-user/add-user.component';
     AppRoutingModule,
     GraphQLModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
