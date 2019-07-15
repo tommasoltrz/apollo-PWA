@@ -1,0 +1,39 @@
+<div class="container"  *ngIf="project | async as $project">
+  <div class="back-nav" routerLink="../">
+    <-- Back
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="project-data-container">
+        <div class="project-data">
+          <p>Name</p>
+          <h3>{{$project.data.Project[0].name}}</h3>
+        </div>
+
+        <div class="project-data">
+          <p>Client</p>
+          <h3>{{$project.data.Project[0].client}}</h3>
+        </div>
+        <div class="project-data">
+          <p>Starting Date</p>
+          <h3>{{$project.data.Project[0].startDate}}</h3>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <br><br><hr>
+  <br><br>
+
+  <div class="row">
+    <div class="col-12">
+      <h4>Users of {{$project.data.Project[0].name}}</h4>
+      <div *ngIf="users | async as $users" class="project-container">
+        <div class="project add-new" [routerLink]="['/projects', $project.data.Project[0].name , 'addUserToProject']">Add New</div>
+        <div class="project " *ngFor="let user of $users.data.Project[0].users" [routerLink]="['/users', user.name]">
+          <p>{{user.name}}</p></div>
+      </div>
+    </div>
+  </div>
+</div>

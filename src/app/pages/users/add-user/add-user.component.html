@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="back-nav" routerLink="../">
+    <-- Back
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <h3>Create User</h3>
+
+      <form (ngSubmit)="addUser(Name.value, Company.value, Role.value, Age.valueAsNumber, Sex.value)">
+        <div class="form-group">
+
+
+          <br>
+          <div ngbDropdown class="d-inline-block" *ngIf="projects | async as $projects">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Project: {{projectName}} </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1" >
+              <div *ngFor="let project of $projects.data.Project">
+              <button ngbDropdownItem (click)="projectName = project.name">{{project.name}}</button>
+            </div>
+            </div>
+
+          </div>
+          <br>
+          <br>
+
+
+          <label for="addName">Name</label> <br>
+          <input #Name type="text" class="form-control" id="addName" required>
+          <br>
+          <label for="addCompany">Company</label> <br>
+          <input #Company type="text" class="form-control" id="addCompany" required>
+          <br>
+          <label for="addRole">Role</label> <br>
+          <input #Role type="text" class="form-control" id="addRole" required>
+          <br>
+          <label for="addAge">Age</label> <br>
+          <input #Age type="number" class="form-control" id="addAge" required>
+          <br>
+          <label for="addSex">Sex</label> <br>
+          <input #Sex type="text" class="form-control" id="addSex" required>
+        </div>
+        <button type="submit" class="btn btn-success">Add</button>
+      </form>
+    </div>
+  </div>
+</div>

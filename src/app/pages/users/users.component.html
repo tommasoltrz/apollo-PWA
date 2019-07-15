@@ -1,0 +1,15 @@
+<div class="container ">
+  <div class="row">
+    <div class="col-sm-12 col-md-10">
+
+      <h3>Users</h3>
+      <div class="project add-new" routerLink="/users/add">Add New</div>
+
+      <div *ngIf="users | async as $users" class="project-container">
+        <div class="project " *ngFor="let user of $users.data.User" [routerLink]="['/users', user.name]">
+          <p>{{user.name}}</p></div>
+      </div>
+
+    </div>
+  </div>
+</div>

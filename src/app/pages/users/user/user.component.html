@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="back-nav" routerLink="../">
+    <-- Back
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div *ngIf="user | async as $users" class="project-data-container">
+        <div class="project-data">
+          <p>Name</p>
+          <h3>{{$users.data.User[0].name}}</h3>
+        </div>
+
+        <div class="project-data">
+          <p>Company</p>
+          <h3>{{$users.data.User[0].company}}</h3>
+        </div>
+
+        <div class="project-data">
+          <p>Role</p>
+          <h3>{{$users.data.User[0].role}}</h3>
+        </div>
+
+        <div class="project-data">
+          <p>Age</p>
+          <h3>{{$users.data.User[0].age}}</h3>
+        </div>
+
+        <div class="project-data">
+          <p>Sex</p>
+          <h3>{{$users.data.User[0].sex}}</h3>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>

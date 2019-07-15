@@ -1,0 +1,36 @@
+
+.project-data-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.back-nav{
+  margin: 50px 0 80px 0;
+}
+
+.project-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.project{
+  width: 100px;
+  height: 100px;
+  margin: 15px 15px 15px 0 ;
+  background: #d46ce7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+
+
+  &.add-new{
+    background: #9effb8;
+  }
+
+  p{
+    text-align: center;
+    margin: 0;
+  }
+}

@@ -1,0 +1,15 @@
+<div class="container ">
+  <div class="row">
+    <div class="col-sm-12 col-md-10">
+
+      <h3>Projects</h3>
+      <div class="project add-new" routerLink="/projects/add">Add New</div>
+
+      <div *ngIf="projects | async as $projects" class="project-container">
+        <div class="project " *ngFor="let project of $projects.data.Project" [routerLink]="['/projects', project.name]">
+          <p>{{project.name}}</p></div>
+      </div>
+
+    </div>
+  </div>
+</div>
